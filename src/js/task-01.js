@@ -14,21 +14,17 @@
 const numberOfCategoryEl = document.querySelectorAll('.item');
 console.log(`В списке ${numberOfCategoryEl.length} категории`);
 
-const textTitleEl = document.querySelectorAll(`.item`);
-console.log(`${textTitleEl}`);
+const showCategoriesEl = document.querySelectorAll(`h2`);
 
+showCategoriesEl.forEach(el =>
+    console.log(`Категория: ${el.textContent}
+    Количество элементов: ${el = document.querySelectorAll(`.item li`).length}`));
 
-
-// const showCategoriesEl = document.querySelectorAll(`.item`).forEach(category => 
-//     console.log(`Категория: ${category.querySelector(`h2`).textContent}`
-//     `Количество элементов: ${category.querySelectorAll(`li`).length}`));
     
 
 
 
 
 
-//  const showCategories = element => element.forEach(el =>
-//     console.log(`Категория: ${el.querySelector(`h2`).textContent}. Количество элементов: ${el.querySelectorAll(`li`).length}.`))
-// showCategories(categoriesListEl);
+
 
