@@ -18,7 +18,7 @@ const showCategoriesEl = document.querySelectorAll(`h2`);
 
 showCategoriesEl.forEach(el =>
     console.log(`Категория: ${el.textContent}
-    Количество элементов: ${el = document.querySelectorAll(`.item li`).length}`));
+    Количество элементов: ${el.parentNode.querySelectorAll(`li`).length}`));
 
     
 
