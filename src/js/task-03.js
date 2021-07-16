@@ -1,5 +1,7 @@
 'use strict'
 
+
+// Напиши скрипт для создания галлереи изображений по массиву данных.
 // Используй массив объектов images для создания тегов img вложенных в li.
 // Для создания разметки используй шаблонные строки и insertAdjacentHTML().
 
@@ -21,17 +23,16 @@ const images = [
       url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       alt: 'Group of Horses Running',
     },
-  ];
-
-  const galleryItemEl = document.createElement('li');
-
-  const image = document.createElement('img');
-  image.setAttributes('url', `${images.url.value}`);
-  image.setAttributes('alt', `${images.alt.value}`);
-
+];
+const galleryList = document.querySelector('#gallery');
   
-//   galleryItemEl.insertAdjacentHTML('afterbegin', `https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`);
+const galleryListEl = images.map(element => {
+  const galleryItemEl = `<li class = "gallery__item"><img src = "${element.url}" alt = "${element.alt}" width = 400 height = 250</li>`
+  return galleryItemEl
+});
+
+galleryList.insertAdjacentHTML('afterbegin', galleryListEl.join(''));
+
+console.log(galleryList);
 
 
-  const galleryEl = document.querySelector('#gallery');
-  galleryEl.append(galleryItemEl);
