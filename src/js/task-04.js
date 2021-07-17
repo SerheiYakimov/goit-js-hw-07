@@ -8,4 +8,22 @@
 
 
 
-const counterValue = document.querySelector('#counter')
+const counterValue = {
+    value: 0,
+    increment() {
+        
+        value += 1;
+    },
+
+    decrement() {
+        
+        value -= 1;
+    },
+};
+
+const incrementBtn = document.querySelector(`button`);
+
+
+
+
+
