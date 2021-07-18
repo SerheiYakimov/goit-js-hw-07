@@ -12,16 +12,32 @@ const counterValue = {
     value: 0,
     increment() {
         
-        value += 1;
+        this.value += 1;
     },
 
     decrement() {
         
-        value -= 1;
+        this.value -= 1;
     },
 };
 
-const incrementBtn = document.querySelector(`button`);
+const incrementBtn = document.querySelector(`[data-action="increment"]`);
+const decrementBtn = document.querySelector(`[data-action="decrement"]`);
+const counterValueEl = document.querySelector(`#value`);
+
+
+decrementBtn.addEventListener(`click`, function () {
+    counterValue.decrement();
+    counterValueEl.textContent = counterValue.value;
+});
+
+incrementBtn.addEventListener(`click`, function () {
+    counterValue.increment();
+    counterValueEl.textContent = counterValue.value;
+});
+    
+    
+
 
 
 
