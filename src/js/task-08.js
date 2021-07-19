@@ -21,3 +21,42 @@
 
 // <div id="boxes"></div>
 
+const refs = {
+    input: document.querySelector('#controls > input'),
+    renderBtn: document.querySelector('[data-action="render"]'),
+    destroyBtn: document.querySelector('[data-action="destroy"]'),
+    boxes: document.querySelector('#boxes'),
+}
+
+// console.log(refs.input);
+// console.log(refs.renderBtn);
+// console.log(refs.destroyBtn);
+// console.log(refs.boxes);
+
+
+refs.input.addEventListener('input', onFindInputValue);
+
+function onFindInputValue (amound) {
+    console.log(Number(amound.currentTarget.value));
+}
+
+refs.renderBtn.addEventListener('click', onCreateBoxes);
+
+function CreateBoxes (amound) {
+    const box = document.createElement('div');
+    box.style.backgroundColor = `${randomColor()}`;
+    box.style.width = '30px';
+    box.style.height = '30px';
+    refs.boxes.append(box);
+
+
+}
+
+function randomColor()
+{
+     const color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+
+
+     return color;
+}
+

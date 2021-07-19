@@ -10,9 +10,9 @@ const refs = {
     spanText: document.querySelector('#text'),
 }
 
-refs.inputRange.addEventListener('input', OnChangeSpanText);
+refs.inputRange.addEventListener('input', onChangeSpanText);
 
-function OnChangeSpanText (event) {
+function onChangeSpanText (event) {
     console.log(event.currentTarget.value);
     refs.spanText.style.fontSize = event.currentTarget.value + 'px';
 }
