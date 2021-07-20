@@ -10,11 +10,8 @@ inputName.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {   
     console.log(event.currentTarget.value.length);
-    if (Number(event.currentTarget.value.length) === Number(inputName.dataset.length)) {
-        inputName.classList.add('valid');
-    }
-    else {
-        inputName.classList.replace('valid','invalid');
-    }; 
-     
+    Number(event.currentTarget.value.length) === Number(inputName.dataset.length) ? 
+    inputName.classList.add('valid') || inputName.classList.replace('invalid', 'valid') :
+    inputName.classList.replace('valid', 'invalid') || inputName.classList.add('invalid');
+                
 };
